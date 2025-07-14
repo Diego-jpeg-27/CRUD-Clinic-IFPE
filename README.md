@@ -1,4 +1,3 @@
-CRUD-Clinic-IFPE
 Sistema web com CRUD simples para gestão de médicos, pacientes e consultas, desenvolvido como atividade acadêmica no IFPE - Campus Igarassu.
 
 Este projeto é parte de uma atividade prática de desenvolvimento web para praticar:
