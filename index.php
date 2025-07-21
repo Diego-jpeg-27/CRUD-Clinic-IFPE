@@ -1,27 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="UTF-8">
-  <title>CRUD-Clinic-IFPE</title>
+  <title>Login - CRUD Clinic IFPE</title>
 </head>
-
 <body>
 
-<h2>Formulário de Acesso</h2>
+<h2>Login</h2>
+<form action="auth/login.php" method="POST">
+  <label for="usuario">Usuário:</label><br>
+  <input type="text" name="usuario" required><br><br>
 
-<a href="registrar_consulta.php">
-  <button type="button">Registrar Consulta</button>
-</a><br>
+  <label for="senha">Senha:</label><br>
+  <input type="password" name="senha" required><br><br>
 
-<br><a href="cadastrar_paciente.php">
-  <button type="button">Cadastrar Paciente</button>
-</a><br>
+  <input type="submit" value="Entrar">
+</form>
 
-<br><a href="cadastrar_medico.php">
-  <button type="button">Cadastrar Médico</button>
-</a><br>
-
- </body>
+</body>
 </html>
+  
