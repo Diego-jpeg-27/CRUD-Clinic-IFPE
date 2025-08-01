@@ -9,13 +9,14 @@ CREATE TABLE medico (
     crm VARCHAR(20) NOT NULL UNIQUE
 );
 
--- Tabela de Pacientes
+-- Tabela de Pacientes (agora com campo de imagem de perfil)
 CREATE TABLE paciente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     cpf VARCHAR(14) NOT NULL UNIQUE,
     data_nascimento DATE NOT NULL,
-    tipo_sanguineo VARCHAR(5) NOT NULL
+    tipo_sanguineo VARCHAR(5) NOT NULL,
+    foto VARCHAR(255)  -- /storage
 );
 
 -- Tabela de Consultas (relacionamento com restrição de unicidade)
@@ -26,7 +27,6 @@ CREATE TABLE consulta (
     data_hora DATETIME NOT NULL,
     observacoes TEXT,
     
-    -- garante que não haja duplicatas
     UNIQUE (id_medico, id_paciente, data_hora), 
 
     FOREIGN KEY (id_medico) REFERENCES medico(id)
