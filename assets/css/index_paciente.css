@@ -1,0 +1,77 @@
+/* Reset básico */
+body, h1, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+/* Centralização geral */
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    position: relative;
+}
+
+/* Botão estilo painel */
+.button, button {
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 4px solid #000;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Botão "Voltar" fixo no canto superior esquerdo */
+.top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Título central */
+h1 {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+/* Botão "Novo Paciente" central abaixo do título */
+.novo-paciente {
+    margin-bottom: 30px;
+}
+
+/* Tabela */
+table {
+   border-collapse: collapse;
+    width: 90%;
+    margin-top: 30px;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Links de ação */
+td a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
