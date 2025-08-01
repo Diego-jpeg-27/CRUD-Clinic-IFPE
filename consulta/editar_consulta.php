@@ -8,6 +8,13 @@ if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
 
 require_once("../conexao.php");
 
+// Verifica se o ID foi passado
+if (!isset($_GET['id'])) {
+    echo "ID da consulta não informado.";
+    exit;
+}
+$id = $_GET['id'];
+
 // Buscar dados da consulta
 $stmt = $pdo->prepare("SELECT * FROM consulta WHERE id = :id");
 $stmt->bindParam(":id", $id);
