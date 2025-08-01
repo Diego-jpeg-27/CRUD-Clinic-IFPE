@@ -1,26 +1,41 @@
 <?php
 session_start();
 if (!isset($_SESSION['logado'])) {
-    header('Location: index.php'); // Redireciona para login
+    header('Location: index.php'); 
     exit;
-}
+ }
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+ <head>
   <meta charset="UTF-8">
   <title>Painel - CRUD Clinic IFPE</title>
-</head>
+  <link rel="stylesheet" href="assets/css/painel.css">
+ </head>
 <body>
 
-<h2>Painel Principal</h2>
+<!-- Botões canto esquerdo e direito -->
+<div class="top-buttons">
+  <a href="index.php"><button>Voltar</button></a>
+  <a href="auth/logout.php"><button>Sair</button></a>
+</div>
 
-<a href="consulta/registrar.php"><button>Registrar Consulta</button></a><br><br>
-<a href="paciente/cadastrar.php"><button>Cadastrar Paciente</button></a><br><br>
-<a href="medico/cadastrar.php"><button>Cadastrar Médico</button></a><br><br>
-<a href="auth/logout.php"><button>Sair</button></a>
+<div class="container">
+  <h1>Painel Principal</h1>
 
-<a href="index.php"><button>Voltar</button></a><br><br>
-</body>
+  <div class="grid">
+    <a href="consulta/registrar_consulta.php"><button>Registrar Consulta</button></a>
+    <a href="consulta/index_consulta.php"><button>Ver Consulta</button></a>
+
+    <a href="paciente/cadastrar_paciente.php"><button>Cadastrar Paciente</button></a>
+    <a href="paciente/index_paciente.php"><button>Ver Pacientes</button></a>
+
+
+    <a href="medico/cadastrar_medico.php"><button>Cadastrar Médico</button></a>
+    <a href="medico/index_medico.php"><button>Ver Médicos</button></a>
+  </div>
+  </div>
+
+ </body>
 </html>
