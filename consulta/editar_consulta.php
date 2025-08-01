@@ -1,13 +1,12 @@
 <?php
-require_once("../conexao.php");
-
-// Verifica se o ID foi passado
-if (!isset($_GET['id'])) {
-    echo "ID da consulta não informado.";
-    exit();
+// verificações de sessão, proteção do arquivo.
+session_start();
+if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+    header('Location: ../index.php');
+    exit;
  }
 
-$id = $_GET['id'];
+require_once("../conexao.php");
 
 // Buscar dados da consulta
 $stmt = $pdo->prepare("SELECT * FROM consulta WHERE id = :id");

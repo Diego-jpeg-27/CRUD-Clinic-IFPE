@@ -1,4 +1,11 @@
 <?php
+// verificações de sessão, proteção do arquivo.
+session_start();
+if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
+    header('Location: ../index.php');
+    exit;
+ }
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
