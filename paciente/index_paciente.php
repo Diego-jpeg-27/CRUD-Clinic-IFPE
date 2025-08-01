@@ -48,14 +48,13 @@ $pacientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($pacientes as $paciente): ?>
                 <tr>
                     <td><?= $paciente['id'] ?></td>
-                    
                     <td><?= htmlspecialchars($paciente['nome']) ?></td>
                     <td><?= $paciente['cpf'] ?></td>
                     <td><?= $paciente['tipo_sanguineo'] ?></td>
                     <td><?= date('d/m/Y', strtotime($paciente['data_nascimento'])) ?></td>
                     <td>
-                    <a href="cadastrar_medico.php?id=<?= $medico['id'] ?>">Editar</a> |
-                    <a href="excluir_medico.php?id=<?= $medico['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir este médico?')">Excluir</a>
+                        <a href="editar_paciente.php?id=<?= $paciente['id'] ?>">Editar</a> |
+                        <a href="excluir_paciente.php?id=<?= $paciente['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir este paciente?')">Excluir</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -64,3 +63,5 @@ $pacientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php else: ?>
     <p>Nenhum paciente cadastrado ainda.</p>
 <?php endif; ?>
+</body>
+</html>
